@@ -7,13 +7,14 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
+import java.util.Arrays;
 import java.util.Set;
 
 /**
  * 步骤： build jar
  * .java 源代码生成器 github. TypeSpec
  */
-@SupportedAnnotationTypes({"com.heaven7.java.study.processor.PrintMe"})
+@SupportedAnnotationTypes({"com.heaven7.java.study.processor.PrintMe", "com.heaven7.java.study.processor.ShouldProxy"})
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
 //@SupportedOptions() //supportedOptions用来表示所支持的附加选项
 public class MyProcessor extends AbstractProcessor {
@@ -57,7 +58,9 @@ public class MyProcessor extends AbstractProcessor {
         msg.printMessage(Diagnostic.Kind.NOTE, "ExecutableElement： " +  member);
         msg.printMessage(Diagnostic.Kind.NOTE, "userText： " +  userText);
         msg.printMessage(Diagnostic.Kind.NOTE, "--------------- end getCompletions() --------------------");
-        return super.getCompletions(element, annotation, member, userText);
+       // return super.getCompletions(element, annotation, member, userText);
+
+        return Arrays.asList(Completions.of("key_test", "test message"));
     }
 
     @Override
