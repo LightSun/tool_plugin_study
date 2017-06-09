@@ -2,10 +2,7 @@ package com.heaven7.java.study.processor;
 
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
-import javax.lang.model.element.AnnotationMirror;
-import javax.lang.model.element.Element;
-import javax.lang.model.element.ExecutableElement;
-import javax.lang.model.element.TypeElement;
+import javax.lang.model.element.*;
 import javax.tools.Diagnostic;
 import java.util.Arrays;
 import java.util.Set;
@@ -18,6 +15,18 @@ import java.util.Set;
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
 //@SupportedOptions() //supportedOptions用来表示所支持的附加选项
 public class MyProcessor extends AbstractProcessor {
+
+    @Override
+    public synchronized void init(ProcessingEnvironment processingEnv) {
+        /**
+         * 在init()中我们获得如下引用：
+
+         Elements：一个用来处理Element的工具类；
+         Types：一个用来处理TypeMirror的工具类；
+         Filer：正如这个名字所示，使用Filer你可以创建文件；
+         */
+        super.init(processingEnv);
+    }
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment env) {
@@ -46,6 +55,8 @@ public class MyProcessor extends AbstractProcessor {
                 messager.printMessage(Diagnostic.Kind.NOTE, "Printing: " + e.toString());//完整的类，类，名
             }
         }
+       // processingEnv.getFiler().createSourceFile("heaven7", )
+
         return true;
     }
 
