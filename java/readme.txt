@@ -14,3 +14,6 @@ module compile依赖：
           compile 'com.google.auto.service:auto-service:1.0-rc2'
           compile 'com.squareup:javapoet:1.7.0'
 然后在你的processor上注解 AutoService
+
+google高质量的api库
+Google Guava
