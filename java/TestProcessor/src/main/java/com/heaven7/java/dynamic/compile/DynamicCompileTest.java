@@ -12,7 +12,7 @@ import java.net.URLClassLoader;
 /**
  * 动态的生成了一个代理类Dealer.java ,然后动态的编译这个类,最后调用这个类的方法.
  */
-public class Test {
+public class DynamicCompileTest {
 
     public static void main(String[] args) throws Exception {
        final String pkgName = "com.heaven7.java.dynamic.compile";
