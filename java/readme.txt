@@ -17,3 +17,10 @@ module compile依赖：
 
 google高质量的api库
 Google Guava
+
+android字节码插件注入处理：
+    http://blog.csdn.net/sbsujjbcy/article/details/50839263
+
+====================
+TestProcessor 是编译时插件。idea项目
+
