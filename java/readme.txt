@@ -21,6 +21,10 @@ Google Guava
 android字节码插件注入处理：
     http://blog.csdn.net/sbsujjbcy/article/details/50839263
 
+android transform (字节码注入)
+http://tools.android.com/tech-docs/new-build-system/transform-api
+
 ====================
 TestProcessor 是编译时插件。idea项目
+
 

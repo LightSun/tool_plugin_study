@@ -18,8 +18,11 @@ public class PluginImpl implements Plugin<Project> {
      */
     void apply(Project project) {
         //传递参数
+
+        //创建扩展
         project.extensions.create('pluginExt', PluginExtension)
         project.pluginExt.extensions.create('nestExt', PluginNestExtension)
+        //
         project.task('customTask', type: CustomTask)
 
         project.gradle.addListener(new TimeListener())
