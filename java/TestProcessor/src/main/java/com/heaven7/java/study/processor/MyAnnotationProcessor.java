@@ -16,6 +16,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Note:
+ package com.example; //PackageElement
+
+ public class Foo { // TypeElement
+
+     private int a; // VariableElement
+     private Foo other; // VariableElement
+
+     public Foo() {} // ExecuteableElement
+
+     public void setA( // ExecuteableElement
+         int newA // TypeElement
+         ) {
+
+     }
+ }
+
+ Element getEnclosingElement();  //获取父元素
+ List<? extends Element> getEnclosedElements(); //获取子元素
+ */
 @SupportedAnnotationTypes("PluggableAPT.ToBeTested")//可以用"*"表示支持所有Annotations
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
 public class MyAnnotationProcessor extends AbstractProcessor {
