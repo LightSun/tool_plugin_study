@@ -1,4 +1,4 @@
-package com.heaven7.study.idea.apt;
+package com.heaven7.study.apt;
 
 import com.heaven7.java.data.mediator.Field;
 import com.heaven7.java.data.mediator.Fields;

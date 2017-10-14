@@ -14,6 +14,7 @@
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true">
+        <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true">
           <entry name="$PROJECT_DIR$/generated_tests" />
         </processorPath>
