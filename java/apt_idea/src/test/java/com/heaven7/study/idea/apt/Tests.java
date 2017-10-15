@@ -1,10 +1,6 @@
 package com.heaven7.study.idea.apt;
 
-import com.heaven7.java.data.mediator.DataMediator;
-import com.heaven7.java.data.mediator.DataMediatorCallback;
-import com.heaven7.java.data.mediator.DataMediatorFactory;
-import com.heaven7.java.data.mediator.Property;
-import com.heaven7.study.apt.FlowItemModule;
+import com.heaven7.java.data.mediator.*;
 import junit.framework.TestCase;
 
 /**
@@ -27,13 +23,26 @@ public class Tests extends TestCase {
     }
 
     public void test1(){
+        log("test1", GlobalSetting.getDefault().getGsonVersion());
         mediator.getDataProxy()
                 .setId(1)
                 .setName("heaven7")
-                .setDesc("xxx");
+                .setDesc("xxx")
+                .setTest("test");
+        log("test1", GlobalSetting.getDefault().getGsonVersion());
     }
 
     public static void log(String method, Object obj){
         System.out.println("Tests >>> called [ "+ method+"() ]: " + obj);
     }
+
+    public static void main(String[] args){
+        final Tests tests = new Tests();
+        try {
+            tests.setUp();
+        } catch (Exception e) {
+        }
+        tests.test1();
+    }
+
 }

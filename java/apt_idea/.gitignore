@@ -1,0 +1,25 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+.idea/*/*
+.idea/*
+.idea/.name
+.idea/copyright/
+.idea/dictionaries/
+.idea/encodings.xml
+.idea/workspace.xml
+classes/artifacts/data_mediator/
+.gitignore
+.gradle/
+build/
+generated/
+generated_tests/
+src/main/resources/
