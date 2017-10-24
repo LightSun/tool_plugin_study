@@ -20,6 +20,6 @@ classes/artifacts/data_mediator/
 .gitignore
 .gradle/
 build/
-generated/
-generated_tests/
-src/main/resources/
+#generated/
+#generated_tests/
+#src/main/resources/
