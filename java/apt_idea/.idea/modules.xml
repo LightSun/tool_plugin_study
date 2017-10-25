@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/apt-idea.iml" filepath="$PROJECT_DIR$/apt-idea.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/apt-idea_main.iml" filepath="$PROJECT_DIR$/.idea/modules/apt-idea_main.iml" group="apt-idea" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/apt-idea_test.iml" filepath="$PROJECT_DIR$/.idea/modules/apt-idea_test.iml" group="apt-idea" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/apt-idea.iml" filepath="$PROJECT_DIR$/.idea/modules/apt-idea.iml" />
     </modules>
   </component>
 </project>

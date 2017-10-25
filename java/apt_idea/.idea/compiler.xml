@@ -14,14 +14,7 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true">
         <outputRelativeToContentRoot value="true" />
-        <processorPath>
-          <entry name="$PROJECT_DIR$/generated_tests" />
-        </processorPath>
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="apt-idea_main" target="1.8" />
-      <module name="apt-idea_test" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
