@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+version = '1.0.2'
+
+mainClassName = "org.gradle.sample.Main"
+
+applicationDefaultJvmArgs = ["-Dgreeting.language=en"]
+
+task createDocs {
+    def docs = file("$buildDir/docs")
+    def test1 = file("${project.getProjectDir()}/.heaven7/docs")
+    outputs.dir docs
+    outputs.dir test1
+    doLast {
+        docs.mkdirs()
+        new File(docs, "readme.txt").write("Read me!")
+
+        test1.mkdirs()
+        new File(test1, "readme.txt").write("Read me!")
+        println "heaven7"
+    }
+}
+
+distributions {
+    main {
+        contents {
+            from(createDocs) {
+                into "docs"
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'commons-collections:commons-collections:3.2.2'
+}
