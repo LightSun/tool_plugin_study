@@ -1,6 +1,5 @@
 package com.heaven7.study.idea.apt;
 
-import com.heaven7.java.data.mediator.*;
 import junit.framework.TestCase;
 
 /**
@@ -8,7 +7,7 @@ import junit.framework.TestCase;
  */
 public class Tests extends TestCase {
 
-    DataMediator<FlowItemModule> mediator;
+ /*   DataMediator<FlowItemModule> mediator;
     @Override
     protected void setUp() throws Exception {
         super.setUp();
@@ -30,7 +29,7 @@ public class Tests extends TestCase {
                 .setDesc("xxx")
                 .setTest("test");
         log("test1", GlobalSetting.getDefault().getGsonVersion());
-    }
+    }*/
 
     public static void log(String method, Object obj){
         System.out.println("Tests >>> called [ "+ method+"() ]: " + obj);
@@ -42,7 +41,7 @@ public class Tests extends TestCase {
             tests.setUp();
         } catch (Exception e) {
         }
-        tests.test1();
+       // tests.test1();
     }
 
 }
