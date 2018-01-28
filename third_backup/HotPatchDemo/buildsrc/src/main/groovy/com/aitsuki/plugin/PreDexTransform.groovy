@@ -55,7 +55,8 @@ public class PreDexTransform extends Transform {
                         directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)
 
                 //TODO 这里可以对input的文件做处理，比如代码注入！
-                Inject.injectDir(directoryInput.file.absolutePath)
+                project.logger.error("start inject dir: $directoryInput.file.absolutePath")
+                Inject.injectDir(project, directoryInput.file.absolutePath)
 
                 // 将input的目录复制到output指定目录
                 FileUtils.copyDirectory(directoryInput.file, dest)

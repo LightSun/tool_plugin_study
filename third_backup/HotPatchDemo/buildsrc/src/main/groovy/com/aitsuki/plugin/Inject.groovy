@@ -3,6 +3,7 @@ package com.aitsuki.plugin
 import javassist.ClassPool
 import javassist.CtClass
 import org.apache.commons.io.FileUtils
+import org.gradle.api.Project
 
 /**
  * Created by AItsuki on 2016/4/7.
@@ -29,18 +30,19 @@ public class Inject {
      * --- 3. Application
      * @param path 目录的路径
      */
-    public static void injectDir(String path) {
+    public static void injectDir(Project project,String path) {
         pool.appendClassPath(path)
         File dir = new File(path)
         if(dir.isDirectory()) {
             dir.eachFileRecurse { File file ->
 
                 String filePath = file.absolutePath
+                project.logger.error  filePath.substring(filePath.indexOf(path) + path.length())
                 if (filePath.endsWith(".class")
                         && !filePath.contains('R$')
                         && !filePath.contains('R.class')
                         && !filePath.contains("BuildConfig.class")
-                        // 这里是application的名字，可以通过解析清单文件获得，先写死了
+                        // 这里是application的名字，可以通过解析清单文件获得，先写死了ok
                         && !filePath.contains("HotPatchApplication.class")) {
                     // 这里是应用包名，也能从清单文件中获取，先写死
                     int index = filePath.indexOf("com\\aitsuki\\hotpatchdemo")
@@ -92,14 +94,14 @@ public class Inject {
         }
     }
 
-    private static void injectClass(String className, String path) {
+    private static void injectClass(String className, String outPath) {
         CtClass c = pool.getCtClass(className)
         if (c.isFrozen()) {
             c.defrost()
         }
         def constructor = c.getConstructors()[0];
         constructor.insertAfter("System.out.println(com.aitsuki.hack.AntilazyLoad.class);")
-        c.writeFile(path)
+        c.writeFile(outPath)
     }
 
 }
